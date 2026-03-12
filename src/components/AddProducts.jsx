@@ -1,7 +1,8 @@
 const AddProducts = ()=>{
     return(
         <div>
-            <h1></h1>
+            <h1>Welcome to AddProducts page
+            </h1>
         </div>
     )
 }
