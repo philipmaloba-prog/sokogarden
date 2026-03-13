@@ -54,7 +54,7 @@ const SignUp = ()=>{
                 value={password} onChange={(e)=>setPassword(e.target.value)}/><br />{password}
                 <input type="text" placeholder="Enter Your Phone Number" className="form-control" required value={phone} onChange={(e)=>setPhone(e.target.value)}/><br />{phone}
                 <button type="submit" className="btn btn-primary ">Sign Up</button>
-                <p className="text-center">Already have an account? <Link to='.signin'>Sign In</Link></p>
+                <p className="text-center">Already have an account? <Link to='/signin'>Sign In</Link></p>
             </form>
         </div>
         </div>
