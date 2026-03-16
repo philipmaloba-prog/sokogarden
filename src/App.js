@@ -19,7 +19,7 @@ function App() {
         {/* map a single route */}
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/signin' element={<SignIn/>}/>
-        <Route path='/addproducts' element={<AddProducts/>}/>
+        <Route path='/addproduct' element={<AddProducts/>}/>
         <Route path='/' element={<GetProducts/>}/>
         <Route path='/mpesapayment' element={<MpesaPayment/>}/>
       </Routes>
