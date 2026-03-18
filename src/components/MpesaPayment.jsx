@@ -15,12 +15,12 @@ const MpesaPayment = ()=>{
             data.append('phone',phone)
             data.append('amount',product.product_cost)
             //connection to back end Api
-            const response = await axios.post('https://philipswala.alwaysdata.net/api/get_product_details',data)
+            const response = await axios.post('https://philipswala.alwaysdata.net/api/mpesa_payments',data)
             // update the products hook with data from Api
             setmessage(response.data.message)
 
         } catch (error) {
-        
+        setmessage(error.message)
         }
     }
     return(
@@ -41,4 +41,4 @@ const MpesaPayment = ()=>{
         </div>
     )
 }
-export default MpesaPayment
+export default MpesaPayment;
