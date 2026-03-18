@@ -1,9 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom"
 const GetProducts = () => {
     const [products, setProducts] = useState([])
     const [error, setError] = useState("")
     const [loading, setLoading] = useState("")
+    const navigate=useNavigate()//navigation from one component to another
     //path to images 
     const img_url='https://malombeswala.alwaysdata.net/static/images/'
     // function to get all the products
@@ -11,7 +13,7 @@ const GetProducts = () => {
         setLoading('please wait....')
         try {
             //connection to back end Api
-            const response = await axios.get('https://philipswala.alwaysdata.net/api/get_product_details')
+            const response = await axios.get('https://malombeswala.alwaysdata.net/api/get_product_details')
             // update the products hook with data from Api
             setProducts(response.data)
             setLoading("")
@@ -33,12 +35,12 @@ const GetProducts = () => {
 
                  <div className="col-md-3 mb-4 text-center">
                 <div className="card shadow">
-                    <img src={img_url + product.product_photo} alt="" className="producy_img mt-4" />
+                    <img src={img_url + product.product_photo} alt="" className="product_img mt-4" />
                     <div className="card-body">
                         <h5 className="mt-2">{product.product_name}</h5>
                         <p className="text-muted">{product.product_description}</p>
                         <b className="text-warning">{product.product_cost}</b>
-                        <button className="btn btn-dark w-100">Purchase Now</button>
+                        <button className="btn btn-dark w-100" onClick={()=>navigate('/mpesapayment',{state:{product}})}>Purchase Now</button>
                     </div>
                 </div>
             </div>
